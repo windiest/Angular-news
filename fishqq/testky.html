@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Post Message</title>
+		<script src="js/jquery-1.7.2.min.js"></script>
+	</head>
+
+	<body>
+		<div style="width:200px; float:left; margin-right:200px;border:solid 1px #333;">
+			<div id="color">Frame Color</div>
+		</div>
+		<div>
+			<iframe id="child" name="child" src="http://localhost/fishqq/testkyiframe.html"></iframe>
+		</div>
+
+		<script type="text/javascript">
+			window.onload = function() {
+				window.frames[0].postMessage('getcolor', 'http://localhost/fishqq/testkyiframe.html');
+			    alert($(window.frames["child"].document).find("#container").html());
+			    $(window.frames["child"].document).find("#container").attr("height","5000px")
+			}
+			window.addEventListener('message', function(e) {
+				var color = e.data;
+				document.getElementById('color').style.backgroundColor = color;
+			}, false);
+			
+		</script>
+	</body>
+
+</html>
+
+http://test.com/index.html

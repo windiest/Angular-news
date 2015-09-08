@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+        <style type="text/css">
+            html,body{
+                height:100%;
+                margin:0px;
+            }
+        </style>
+    </head>
+    <body style="height:100%;">
+        <div id="container" onclick="changeColor();" style="widht:100%; height:100%; background-color:rgb(204, 102, 0);">
+            click to change color
+        </div>
+        <script type="text/javascript">
+            var container=document.getElementById('container');
+
+            window.addEventListener('message',function(e){
+                if(e.source!=window.parent) return;
+                var color=container.style.backgroundColor;
+                window.parent.postMessage(color,'*');
+            },false);
+
+            function changeColor () {            
+                var color=container.style.backgroundColor;
+                if(color=='rgb(204, 102, 0)'){
+                    color='rgb(204, 204, 0)';
+                }else{
+                    color='rgb(204,102,0)';
+                }
+                container.style.backgroundColor=color;
+                window.parent.postMessage(color,'*');
+            }
+        </script>
+    </body>
+</html>
+
+http://lslib.com/lslib.html

