@@ -1,5 +1,4 @@
 # Phishing sites
-钓鱼网站
 Phishing attack
 
-钓鱼网站通常指伪装成银行及电子商务，窃取用户提交的银行帐号、密码等私密信息的网站，可用电脑管家进行查杀。“钓鱼”是一种网络欺诈行为，指不法分子利用各种手段，仿冒真实网站的URL地址以及页面内容，或利用真实网站服务器程序上的漏洞在站点的某些网页中插入危险的HTML代码，以此来骗取用户银行或信用卡账号、密码等私人资料。
+Phishing sites usually disguised as banking and e-commerce, steal bank account numbers, passwords and other private information submitted by the user's Web site, available computer housekeeper killing. "Phishing" is a network fraud, refers to the use of various means of illegal elements, phishing sites URL address and the contents of the page, or the use of real web server program on the site of some of the loopholes in the HTML code, in order to cheat the user bank or credit card account, password and other private information.
