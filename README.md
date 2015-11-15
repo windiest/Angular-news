@@ -1,16 +1,27 @@
 ##说说你对闭包的理解
+##Talk about your understanding of closures
 
 使用闭包主要是为了设计私有的方法和变量。闭包的优点是可以避免全局变量的污染，缺点是闭包会常驻内存，会增大内存使用量，使用不当很容易造成内存泄露。
+
+Using closures designed primarily to private methods and variables. Closure advantage of global variables are avoided contamination, the disadvantage is the closure will be permanent memory, the memory usage increases, improper use is likely to cause a memory leak.
 
 
 
 闭包有三个特性:
 
+Closures have three characteristics:
+
 >1.函数嵌套函数
 >2.函数内部可以引用外部的参数和变量
 >3.参数和变量不会被垃圾回收机制回收
+
+1. Function 
+2. The internal function nested function can refer to external parameters and variables 
+3. The parameters and variables will not be garbage collection mechanism Recycling
+You talk about the shortcomings of Cookie
  
 请你谈谈Cookie的弊端
+
 -----------------
 `cookie`虽然在持久保存客户端数据提供了方便，分担了服务器存储的负担，但还是有很多局限性的。
 第一：每个特定的域名下最多生成20个`cookie`
@@ -19,6 +30,11 @@
     2.IE7和之后的版本最后可以有50个cookie。
     3.Firefox最多50个cookie
     4.chrome和Safari没有做硬性限制
+    
+    1.IE6 or earlier up to 20 cookie 
+    2.IE7 later version and last may have 50 cookie. 
+    3.Firefox up to 50 cookie 
+    4.chrome and Safari does not do hard limit. IE and Opera will clean up the least recently used cookie , Firefox will randomly to clean cookie .
 
 `IE`和`Opera` 会清理近期最少使用的`cookie`，`Firefox`会随机清理`cookie`。
 
