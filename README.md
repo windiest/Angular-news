@@ -42,50 +42,82 @@ You talk about the shortcomings of Cookie
 
 IE 提供了一种存储可以持久化用户数据，叫做`userdata`，从`IE5.0`就开始支持。每个数据最多128K，每个域名下最多1M。这个持久化数据放在缓存中，如果缓存没有清理，那么会一直存在。
 
+IE can provide a way to store persistent user data, called UserData , from IE5.0 has supported. Each data up to 128K, under each domain up to 1M. The persistent data in the cache, if not cleaned the cache, it will always exist.
+
 
 ###优点：极高的扩展性和可用性
+###Advantages: high scalability and availability
 
     1.通过良好的编程，控制保存在cookie中的session对象的大小。
     2.通过加密和安全传输技术（SSL），减少cookie被破解的可能性。
     3.只在cookie中存放不敏感数据，即使被盗也不会有重大损失。
     4.控制cookie的生命期，使之不会永远有效。偷盗者很可能拿到一个过期的cookie。
+    
+    1. Good programming, control the size of the session cookie stored in the object. 
+    2. encryption and secure transmission technology (SSL), to reduce the possibility of cookie to crack. 
+    3. Only non-sensitive data is stored in a cookie, even if stolen will not have significant losses. 
+    4. Control cookie lifetime, so it will not always be effective. Theft are likely to get an expired cookie.
 
 ###缺点：
+###Disadvantages:
 
     1.`Cookie`数量和长度的限制。每个domain最多只能有20条cookie，每个cookie长度不能超过4KB，否则会被截掉。
     
     2.安全性问题。如果cookie被人拦截了，那人就可以取得所有的session信息。即使加密也与事无补，因为拦截者并不需要知道cookie的意义，他只要原样转发cookie就可以达到目的了。
     
     3.有些状态不可能保存在客户端。例如，为了防止重复提交表单，我们需要在服务器端保存一个计数器。如果我们把这个计数器保存在客户端，那么它起不到任何作用。
+    
+    1.`Cookie` limit the number and length. Each domain can have a maximum of 20 cookie, each cookie length can not exceed 4KB, otherwise it will be truncated. 
+
+    2. The security issues. If the cookie is intercepted, that person can get all the session information. Even if encryption is also unhelpful, because Interceptor does not need to know the meaning of the cookie, cookie forwarding as long as he can achieve their goals. 
+
+    3. Some state can not be stored in the client. For example, in order to prevent duplicate submission form, we need to save a counter on the server side. If we put this counter is stored in the client, then it will not achieve any effect.
+Browser local storage
 
 浏览器本地存储
 ---------
 在较高版本的浏览器中，`js`提供了`sessionStorage`和`globalStorage`。在`HTML5`中提供了`localStorage`来取代`globalStorage`。
 
+In later versions of the browser, JS provides sessionStorage and globalStorage . In HTML5 provides in localStorage to replace globalStorage.
+
 `html5`中的`Web Storage`包括了两种存储方式：`sessionStorage`和`localStorage`。
+
+html5 The Web Storage includes two storage methods: sessionStorage and localStorage .
 
 `sessionStorage`用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。因此`sessionStorage`不是一种持久化的本地存储，仅仅是会话级别的存储。
 
+sessionStorage data stored locally for a session (session) in which the data only in the same session of the page to access data, and when the end of the session also will be destroyed. So sessionStorage not a persistent local storage, just session-level storage.
+
 而`localStorage`用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的。
 
+And localStorage for persistent local storage, unless the initiative to remove the data, or the data is never out of date.
+
 ###web storage和cookie的区别
+###the difference between web storage and a cookie
 
 
 `Web Storage`的概念和`cookie`相似，区别是它是为了更大容量存储设计的。`Cookie`的大小是受限的，并且每次你请求一个新的页面的时候`Cookie`都会被发送过去，这样无形中浪费了带宽，另外`cookie`还需要指定作用域，不可以跨域调用。
 
+Web Storage concept and cookie similar, except that it is designed for higher-capacity storage. Cookie size is limited, and every time you request a new page when the Cookie will be sent in the past, so that virtually waste bandwidth, another cookie also need to specify the scope, not cross-domain calls.
+
 除此之外，`Web Storage`拥有`setItem,getItem,removeItem,clear`等方法，不像`cookie`需要前端开发者自己封装`setCookie，getCookie`。
+
+In addition, Web Storage has setItem, getItem, removeItem, clear methods, unlike the cookie front-end developers need their own package setCookie, getCookie.
 
 但是`cookie`也是不可以或缺的：`cookie`的作用是与服务器进行交互，作为`HTTP`规范的一部分而存在 ，而`Web Storage`仅仅是为了在本地“存储”数据而生
 
+But the cookie is not indispensable: cookie 's role is to interact with the server as HTTP part of the specification exists, and Web Storage simply to the local "store" raw data
+
 浏览器的支持除了`IE７`及以下不支持外，其他标准浏览器都完全支持(ie及FF需在web服务器里运行)，值得一提的是IE总是办好事，例如IE7、IE6中的`userData`其实就是`javascript`本地存储的解决方案。通过简单的代码封装可以统一到所有的浏览器都支持`web storage`。
 
-
+Browser support in addition to IE7 and below are not supported, other standard browsers fully support (ie and FF need to run a web server in), it is worth mentioning that IE always good things, such as IE7, IE6 in the userData fact is javascript local storage solutions. By simple code package can be unified to all the browsers support Web storage.
 
 `localStorage`和`sessionStorage`都具有相同的操作方法，例如`setItem、getItem`和`removeItem`等
 
-
+localStorage and sessionStorage have the same method of operation, for example setItem, getItem and removeItem etc.
 
 ###cookie 和session 的区别：
+###cookie and session distinction:
  
      1、cookie数据存放在客户的浏览器上，session数据放在服务器上。
      2、cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗
@@ -96,25 +128,44 @@ IE 提供了一种存储可以持久化用户数据，叫做`userdata`，从`IE5
      5、所以个人建议：
         将登陆信息等重要信息存放为SESSION
         其他信息如果需要保留，可以放在COOKIE中
+        
+     1, cookie data is stored on the customer's browser, session data on the server. 
+     2, cookie is not very safe, others can be analyzed at a local store and COOKIE COOKIE cheat should be used taking into account the security session. 
+     3, session will be within a certain time saved on the server. When accessing the increase, it would be more occupy the performance of your server consider to reduce server performance, you should use COOKIE. 
+     4, the data stored in a single cookie can not exceed 4K, many browsers are limited to a maximum of one site to save 20 cookie. 
+     5, so personal recommendations: the login information and other important information is stored as SESSION additional information, if necessary, it can be placed in COOKIE
 
 CSS 相关问题
+
+CSS-related issues
 --------
 
 ###display:none和visibility:hidden的区别？
+###display: none and visibility: hidden difference?
  
 
     display:none  隐藏对应的元素，在文档布局中不再给它分配空间，它各边的元素会合拢，
     就当他从来不存在。
     
     visibility:hidden  隐藏对应的元素，但是在文档布局中仍保留原来的空间。
+    
+    display: none to hide the corresponding elements in the document layout is no longer space allocated to it, it is the element of each side will be closed, on when he never existed. 
+
+    visibility: hidden hides the corresponding elements, but still retain the original layout of the space in the document. The difference in the link andimport CSS is?
 
 ###CSS中 link 和@import 的区别是？
+###The difference in the link andimport CSS is?
  
 
     (1) link属于HTML标签，而@import是CSS提供的; 
     (2) 页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载;
     (3) import只在IE5以上才能识别，而link是HTML标签，无兼容问题; 
     (4) link方式的样式的权重 高于@import的权重.
+    
+    (1) link belong to HTML tags, and CSSimport is provided; 
+    (2) the page is loaded, link will also be loaded, but referencesimport CSS will wait until the page is finished loading reloading; 
+    (3) Import only to recognize in IE5 or more, while link is HTML tag, no compatibility issues; style right 
+    (4) linkimport way of weight above the weight of heavy. Similarities and Differences between absolute and float attributes: position
     
 ###position:absolute和float属性的异同  
     
