@@ -168,26 +168,40 @@ CSS-related issues
     (4) linkimport way of weight above the weight of heavy. Similarities and Differences between absolute and float attributes: position
     
 ###position:absolute和float属性的异同  
+###Similarities and Differences between absolute and float attributes: position
     
     A：共同点：
     对内联元素设置`float`和`absolute`属性，可以让元素脱离文档流，并且可以设置其宽高。
     
     B：不同点：
     float仍会占据位置，position会覆盖文档流中的其他元素。
+    
+    A: common: 
+    inline element set `float` and` absolute` property allows elements from the document flow, and can set its width and height. 
+
+    B: Different point: 
+    float will still occupy the position, position overrides other elements in the document flow.
 
 ###介绍一下box-sizing属性？
+###Introduce the box-sizing property?
 
 `box-sizing`属性主要用来控制元素的盒模型的解析模式。默认值是`content-box`。
+ box-sizing property is primarily used to control element analytical model box model. The default value is content-Box.
 
 - `content-box`：让元素维持W3C的标准盒模型。元素的宽度/高度由border + padding + content的宽度/高度决定，设置width/height属性指的是content部分的宽/高
+-  content-Box : Let element to maintain the standard W3C box model. Width / height of the element / height is determined by the border + padding + content width, set width / height attribute refers to the content portion of the width / height
 
 - `border-box`：让元素维持IE传统盒模型（IE6以下版本和IE6~7的怪异模式）。设置width/height属性指的是border + padding + content
+-  border-Box : Let element to maintain the traditional box model IE (IE6 and IE6 ~ 7 the following versions of quirks mode). Set width / height attribute refers to the border + padding + content
 
 
-标准浏览器下，按照W3C规范对盒模型解析，一旦修改了元素的边框或内距，就会影响元素的盒子尺寸，就不得不重新计算元素的盒子尺寸，从而影响整个页面的布局。    
+标准浏览器下，按照W3C规范对盒模型解析，一旦修改了元素的边框或内距，就会影响元素的盒子尺寸，就不得不重新计算元素的盒子尺寸，从而影响整个页面的布局。   
+
+Under standard browser, according to W3C box model specification analysis, once the border or modify the elements within distance, it will affect the size of the box element, you have to recalculate the box the size of the elements, thus affecting the layout of the entire page.
 
 
 ###CSS 选择符有哪些？哪些属性可以继承？优先级算法如何计算？ CSS3新增伪类有那些？
+###CSS selectors are there? Which attributes can be inherited? Priority algorithm calculated? Added CSS3 pseudo-classes are those?
 
    
     1.id选择器（ # myid）
@@ -199,6 +213,16 @@ CSS-related issues
     7.通配符选择器（ * ）
     8.属性选择器（a[rel = "external"]）
     9.伪类选择器（a: hover, li:nth-child）
+    
+    1.id selector (# myid) 
+    2. Class selector (.myclassname) 
+    3. Tag selectors (div, h1, P) 
+    4. adjacent selector (h1 + P) 
+    5. child selector (ul> li ) 
+    6. descendant selectors (li a) 
+    7. wildcard selector (*) 
+    8. attribute selector (a [rel = "external"]) 
+    9. pseudo-class selectors (a: hover, li: nth-child)
           
   *   可继承的样式： font-size font-family color, text-indent;
           
@@ -207,8 +231,19 @@ CSS-related issues
   *   优先级就近原则，同权重情况下样式定义最近者为准;
           
   *   载入样式以最后载入的定位为准;
+
+
+  *   Inheritable style: font-size font-family color, text-indent;
+
+  *   Non Inherited Styles: border padding margin width height;
+
+  *   Priority under the principle of proximity, with weights whichever the case recently defined style;
+
+  *   Loading last loaded positioning styles to prevail;
       
 >优先级为:
+
+Priority:
       
       
     !important >  id > class > tag  
@@ -227,7 +262,7 @@ CSS-related issues
  
 
 ###position的值， relative和absolute分别是相对于谁进行定位的？
-
+###position values, relative and absolute are positioned with respect to whom?
     absolute 
             生成绝对定位的元素， 相对于最近一级的 定位不是 static 的父元素来进行定位。
 
@@ -238,8 +273,20 @@ CSS-related issues
         生成相对定位的元素，相对于其在普通流中的位置进行定位。 
 
     static  默认值。没有定位，元素出现在正常的流中
+    
+    absolute 
+        generate absolute element positioned relative to the recent level is not static positioned parent element to be positioned. 
+
+    fixed (old IE does not support) 
+        to generate absolute element positioned relative to the browser window positioning. 
+
+    relative 
+        generating element relative positioning, relative to its position in the general stream positioning. 
+
+    static default. No positioning element occurs in the normal stream
 
 ###CSS3有哪些新特性？
+###CSS3 What's new?
 
     CSS3实现圆角（border-radius），阴影（box-shadow），
     对文字加特效（text-shadow、），线性渐变（gradient），旋转（transform）
@@ -248,8 +295,17 @@ CSS-related issues
     在CSS3中唯一引入的伪元素是::selection.
     媒体查询，多栏布局
     border-image
+    
+    CSS3 rounded corners (border-radius), shadow (box-shadow), 
+    add special effects to the text (text-shadow,), a linear gradient (gradient), rotation (transform) 
+    transform: Rotate (9deg) Scale (0.85,0.90) translate (0px, -30px) skew (-9deg, 0deg); // rotation, scaling, positioning, tilt 
+    adds more CSS selectors more background rgba 
+    unique introduced in CSS3 pseudo-elements :: selection. 
+    Media queries , multi-column layout 
+    border-image
       
 ###XML和JSON的区别？
+###XML and JSON difference?
 
 
     (1).数据体积方面。
@@ -260,30 +316,54 @@ CSS-related issues
     JSON对数据的描述性比XML较差。
     (4).传输速度方面。
     JSON的速度要远远快于XML。
+    
+    (1) The data volume terms. 
+    XML JSON relative terms, the volume of data is small, the speed of delivery faster. 
+    (2) aspects of data exchange. 
+    JSON and JavaScript interaction more convenient and easier to parse processing, better data interaction. 
+    (3) The data described aspects. 
+    JSON description of data than XML poor. 
+    (4) The transmission speed. 
+    JSON's speed is much faster than XML.
 
 
 
 ###对BFC规范的理解？
+###BFC norms of understanding?
           BFC，块级格式化上下文，一个创建了新的BFC的盒子是独立布局的，盒子里面的子元素的样式不会影响到外面的元素。在同一个BFC中的两个毗邻的块级盒在垂直方向（和布局方向有关系）的margin会发生折叠。
         （W3C CSS 2.1 规范中的一个概念，它决定了元素如何对其内容进行布局，以及与其他元素的关系和相互作用。）
+        BFC, block-level formatting context, a BFC created a new box is an independent layout, style, child elements inside the box will not affect the outside elements. In the same BFC two adjoining block-level box in the vertical direction (the direction of a relationship and layout) of margin will collapse from happening. 
+        (A concept W3C CSS 2.1 specification, which determines how the elements in the layout of its contents, and its relationship with other elements and interactions.)
+
 
 ###解释下 CSS sprites，以及你要如何在页面或网站中使用它。
+###Talk about your understanding of the semantic?
 
     CSS Sprites其实就是把网页中一些背景图片整合到一张图片文件中，再利用CSS的“background-image”，“background- repeat”，“background-position”的组合进行背景定位，background-position可以用数字能精确的定位出背景图片的位置。这样可以减少很多图片请求的开销，因为请求耗时比较长；请求虽然可以并发，但是也有限制，一般浏览器都是6个。对于未来而言，就不需要这样做了，因为有了`http2`。
+    CSS Sprites in fact, the number of pages in the background image into an image file, and then use the CSS "background-image", "background- repeat", "background-position" a combination of background positioning, background-position can be used Digital can accurately locate the position of the background image. This can reduce the cost of many pictures request because the request takes a relatively long; although requests can be complicated, but there are limits, are six general browser. For the future, there is no need to do so, and because of `http2`.
 
 
 
 html部分
 ------
 
+html part
+------
+
 ###说说你对语义化的理解？
+###Talk about your understanding of the semantic?
 
     1，去掉或者丢失样式的时候能够让页面呈现出清晰的结构
     2，有利于SEO：和搜索引擎建立良好沟通，有助于爬虫抓取更多的有效信息：爬虫依赖于标签来确定上下文和各个关键字的权重；
     3，方便其他设备解析（如屏幕阅读器、盲人阅读器、移动设备）以意义的方式来渲染网页；
     4，便于团队开发和维护，语义化更具可读性，是下一步吧网页的重要动向，遵循W3C标准的团队都遵循这个标准，可以减少差异化。
     
-###Doctype作用? 严格模式与混杂模式如何区分？它们有何意义?    
+    1, removed or lost when allowing page style showing clear structure 
+    2, is conducive to SEO: search engines and to establish good communication helps crawlers to crawl more useful information: reptiles rely on labels to determine the context and the individual right keyword weight; 
+    3, easy to resolve other devices (such as a screen reader, blind readers, mobile devices) in meaningful ways to render web pages;     4, easy to team development and maintenance, more readable semantic, is under Important Trends step right of the page, follow the W3C standards team follow this standard, the difference can be reduced.
+    
+###Doctype作用? 严格模式与混杂模式如何区分？它们有何意义?  
+###Doctype role? Strict mode and mixed mode how to distinguish? They mean?
 
     （1）、<!DOCTYPE> 声明位于文档中的最前面，处于 <html> 标签之前。告知浏览器以何种模式来渲染文档。 
     
@@ -291,17 +371,35 @@ html部分
     
     （3）、在混杂模式中，页面以宽松的向后兼容的方式显示。模拟老式浏览器的行为以防止站点无法工作。
     
-    （4）、DOCTYPE不存在或格式不正确会导致文档以混杂模式呈现。   
+    （4）、DOCTYPE不存在或格式不正确会导致文档以混杂模式呈现。  
+    
+    (1), <! DOCTYPE> declaration in the document in the front, in the <html> tag before. Tells the browser to render the document in which mode. 
+
+    (2) strict mode layout and JS mode of operation is based on the highest standards of the browser supports running. 
+
+    (3), in promiscuous mode, page backward compatible with liberal display. Simulate the behavior of older browsers do not work to prevent the site. 
+
+    (4), DOCTYPE does not exist or incorrectly formatted document will lead to promiscuous mode rendering.   
 
 ###你知道多少种Doctype文档类型？
+###Do you know how many document types Doctype?
 
      该标签可声明三种 DTD 类型，分别表示严格版本、过渡版本以及基于框架的 HTML 文档。
      HTML 4.01 规定了三种文档类型：Strict、Transitional 以及 Frameset。
      XHTML 1.0 规定了三种 XML 文档类型：Strict、Transitional 以及 Frameset。
     Standards （标准）模式（也就是严格呈现模式）用于呈现遵循最新标准的网页，而 Quirks
      （包容）模式（也就是松散呈现模式或者兼容模式）用于呈现为传统浏览器而设计的网页。
+     
+     The label can be declared DTD three types, respectively strict version, interim version and an HTML-based documentation framework. 
+     HTML 4.01 specifies three document types: Strict, Transitional, and Frameset. 
+     XHTML 1.0 specifies three XML document types: Strict, Transitional, and Frameset. 
+     Standards (standard) mode (that is, in strict rendering mode) complies with the latest standards for rendering Web pages, while Quirks 
+ (inclusive) mode (that is, loose rendering mode or compatibility mode) is used to render conventional web browser designed.
 
 HTML与XHTML——二者有什么区别
+-------------------
+
+HTML and XHTML-- What is the difference
 -------------------
 
     区别：
@@ -313,9 +411,21 @@ HTML与XHTML——二者有什么区别
     6.给所有属性赋一个值
     7.不要在注释内容中使“--”
     8.图片必须有说明文字
+    
+    Difference: 
+    1. All tags must have a corresponding end tag element and attribute names 
+    2. All tags must be lowercase 
+    3. All the XML tags must be properly nested 
+    4. All attributes must be quoted. " "enclosed 
+    5. Put all the <and & special symbols with the coded representation 
+    6. assign a value to all of the properties in the comment 7. Do not manipulation "-" 
+    8. The image must have caption
 
 
 常见兼容性问题？
+--------
+
+Common compatibility problems?
 --------
 
     * png24位的图片在iE6浏览器上出现背景，解决方案是做成PNG8.也可以引用一段脚本处理.
@@ -331,8 +441,24 @@ HTML与XHTML——二者有什么区别
     
     *  渐进识别的方式，从总体中逐渐排除局部。 
     
+    * Png24 bit image appears on iE6 browser background, the solution is made ​​PNG8. It can refer to a script processing. 
+
+    * The browser's default margin and padding. The solution is to add a global * {margin: 0; padding: 0;} to unify. 
+
+    * IE6 bilateral Distance bug: After the block attribute labels float, there are rampant margin circumstances, in ie6 show larger margin than the settings. 
+
+    * Double ie generated from the float (IE6 bilateral distance problem: In IE6, if the element is set to float, while setting the margin-left or margin-right, margin value will double.) 
+  #box {float: left; width: 10px; margin: 0 0 0 100px;} 
+
+ Under such circumstances IE will produce 20px distance, the solution is to add --_ display in the label style float control: inline; be converted to inline property. (_ This symbol identifies only ie6) 
+
+    * gradual recognition of the way from the local population gradually excluded. 
+    
       首先，巧妙的使用“\9”这一标记，将IE游览器从所有情况中分离出来。 
       接着，再次使用“+”将IE8和IE7、IE6分离开来，这样IE8已经独立识别。
+      
+      First, the clever use of "\ 9" This marks the IE's browser separated out from all the circumstances. 
+      Then, again using the "+" to IE8 and IE7, IE6 separated, so that IE8 has been independently identified. 
     
       css
           .bb{
@@ -364,12 +490,37 @@ HTML与XHTML——二者有什么区别
     ie和ff都存在，相邻的两个div的margin-left和margin-right不会重合，但是margin-top和margin-bottom却会发生重合。
     解决方法，养成良好的代码编写习惯，同时采用margin-top或者同时采用margin-bottom。
     * ie6对png图片格式支持不好(引用一段脚本处理)
+    
+    * under IE, you can use the method to get the general properties for custom properties, 
+   you can also use getAttribute () Gets the custom attributes; 
+   under Firefox, only Use getAttribute () Gets custom attributes. 
+   Workaround: Uniform for custom properties through getAttribute (). 
+
+    * Under IE, event object has x, y attributes, but no pageX, pageY property; 
+  under Firefox, event object has pageX, pageY property, but there is no x, y properties. 
+
+    * Solution :( conditional comments) drawback is that in IE browser may add additional HTTP requests. 
+
+    * Under Chrome Chinese interface will be smaller than default to force the 12px 12px text display, 
+  by the addition of CSS properties -webkit-text-size-adjust: none; resolved. 
+
+    * After hover style is not accessible by hyperlink is clicked appears visited The Hyperlink style does not have hover and active the solution is to change the order of CSS properties: 
+LVHA: a: link {} a: visited {} a: hover {} a: Active {} 
+
+    * weird modalities: Leakage write DTD statement, Firefox will still be in accordance with the standard model to resolve the page, but IE will trigger quirks mode. To avoid quirks mode gives us unnecessary trouble, it is best to develop the good habit of writing DTD declaration. You can now use [html5] (http://www.w3.org/TR/html5/single-page.html) recommended notation: `<DOCTYPE html>` 
+
+    * top and bottom margin overlap problem 
+ie and ff are present, adjacent both margin-left and margin-right does not coincide div, but margin-top and margin-bottom but it will coincide occur. 
+Solution, to develop good coding habits, while using margin-top or while using margin-bottom. 
+    * Ie6 png image format support is not good for (quote a script processing)
 
 
     
 ###解释下浮动和它的工作原理？清除浮动的技巧
+###Floating and explain how it works? Clear float tips
 
     浮动元素脱离文档流，不占据空间。浮动元素碰到包含它的边框或者浮动元素的边框停留。
+    Floating elements from the document flow, does not occupy space. Floats across the border to stay its borders contain or floating elements. 
     
     1.使用空标签清除浮动。
        这种方法是在所有浮动标签后面添加一个空标签 定义css clear:both. 弊端就是增加了无意义标签。
@@ -377,17 +528,31 @@ HTML与XHTML——二者有什么区别
        给包含浮动元素的父标签添加css属性 overflow:auto; zoom:1; zoom:1用于兼容IE6。
     3.使用after伪对象清除浮动。
        该方法只适用于非IE浏览器。具体写法可参照以下示例。使用中需注意以下几点。一、该方法中必须为需要清除浮动元素的伪对象中设置 height:0，否则该元素会比实际高出若干像素；
+       
+    1. Clear float with an empty label. This method is to add an empty label definition css clear in all floating behind the label: both the disadvantages is to increase the meaningless labels. 
+    2. Use the overflow. To a parent tag contains floating elements add css property overflow: auto; zoom: 1; zoom: 1 for compatibility with IE6. 
+    3. Use after pseudo remove floating objects. This method applies only to non-IE browsers. Specific wording may refer to the following examples. Use should pay attention to the following points. First, the method must be set to clear the height of the floating element's pseudo-objects: 0, otherwise the element will be much higher than the actual number of pixels;
 
 ###浮动元素引起的问题和解决办法？
+###Problems caused by floating elements and solutions?
 
     浮动元素引起的问题：
+    
+    Problems caused by the floating elements: 
 
     （1）父元素的高度无法被撑开，影响与父元素同级的元素
     （2）与浮动元素同级的非浮动元素（内联元素）会跟随其后
     （3）若非第一个元素浮动，则该元素之前的元素也需要浮动，否则会影响页面显示的结构
+    
+    (1) height of the parent element can not be softened, peer influence and elements of the parent element 
+    (2) and non-floating elements floating element siblings (inline elements) will follow thereafter 
+    (3) if not the first element of float, then that element is also required before the float, otherwise it will affect the structure of the page displayed
+
 
 解决方法：
 使用`CSS`中的`clear:both`;属性来清除元素的浮动可解决2、3问题，对于问题1，添加如下样式，给父元素添加`clearfix`样式：
+
+Workaround: use CSS in Clear: Both ; attribute to clear floating elements 2,3 resolve the problem, the problem 1, add the following styles to parent element Add clearfix style:
 
     .clearfix:after{content: ".";display: block;height: 0;clear: both;visibility: hidden;}
     .clearfix{display: inline-block;} /* for IE/Mac */
@@ -396,6 +561,11 @@ HTML与XHTML——二者有什么区别
 
     1，额外标签法，<div style="clear:both;"></div>（缺点：不过这个办法会增加额外的标签使HTML结构看起来不够简洁。）
     2，使用after伪类
+    
+Clear float several ways:
+
+    1, additional labeling, <div style = "clear: both;"> </ div> (disadvantage: But this approach would cause additional HTML tag structure looks simple enough) 
+    2, use after pseudo-class 
 
     #parent:after{
         content:".";
@@ -407,12 +577,19 @@ HTML与XHTML——二者有什么区别
     
     3,浮动外部元素
     4,设置`overflow`为`hidden`或者auto
+    
+    3, floating external element 
+    4, is set to `hidden`` overflow` or auto
 
 ###IE 8以下版本的浏览器中的盒模型有什么不同
+###IE 8 the following versions of the browser box model What is the difference
 
     IE8以下浏览器的盒模型中定义的元素的宽高不包括内边距和边框
+    
+    The following box model IE8 browser's width and height defined elements does not include padding and border
 
 ###DOM操作——怎样添加、移除、移动、复制、创建和查找节点。 
+###DOM manipulation - how to add, remove, move, copy, create, and find nodes.
 
     （1）创建新节点
     
@@ -439,8 +616,35 @@ HTML与XHTML——二者有什么区别
           getElementsByName()    //通过元素的Name属性的值(IE容错能力较强，会得到一个数组，其中包括id等于name值的)
     
           getElementById()    //通过元素Id，唯一性
+          
+     (1) Create a new node 
+
+          createDocumentFragment () // Create a DOM fragment 
+
+          createElement () // create a specific element 
+
+          createTextNode () // Create a text node 
+
+     (2) to add, remove, replace, insert 
+
+          appendChild () 
+
+          removeChild ( ) 
+
+          replaceChild () 
+
+          insertBefore () // before the existing child node into a new child node 
+
+(3) Find 
+
+          getElementsByTagName () // by tag name 
+
+          getElementsByName () // by the value of the Name property of the element (IE fault tolerance Strong, will be an array, including name id equal value) 
+
+          getElementById () // by elemental Id, uniqueness
 
 ###html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？
+###What's new html5, removing those elements? How to deal with a new label HTML5 browser compatibility problems? How to distinguish between HTML and HTML5?
 
     * HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。
     
@@ -472,7 +676,41 @@ HTML与XHTML——二者有什么区别
        <!--[if lt IE 9]> 
        <script> src="http://html5shim.googlecode.com/svn/trunk/html5.js"</script> 
        <![endif]--> 
+       
+    * HTML5 now is not a subset of SGML, mainly to increase with respect to the image, location, storage, multi-tasking and other        features. 
+
+    * Drag release (Drag and drop) API 
+    semantic content better label (header, nav, footer, aside, article, section) 
+    audio, video, API (audio, video) 
+    canvas (Canvas) API 
+    geography (Geolocation) API 
+    Local localStorage offline storage for long term storage of data, the browser is closed after data is not lost; 
+    sessionStorage of data after the browser is closed automatically delete 
+
+    form controls, calendar, date, time, email, url, search   
+    WebWorker new technologies, websocket, Geolocation 
+
+    * Remove The elements of 
+
+the element of pure performance: basefont, big, center, font, s, strike, tt, u; 
+
+adversely affect the availability of the elements of: frame, frameset, noframes; 
+
+support HTML5 new label: 
+
+    * IE8 / IE7 / IE6 support through document.createElement method of producing labels, 
+  can use this feature to allow these browsers support HTML5 new label, 
+
+  after the browser to support the new label, you also need to add tags default style: 
+
+    * Of course, the best way is the direct use of mature framework, use the most is html5shim framework 
+   <-! [if lt IE 9]> 
+   <Script> src = "http://html5shim.googlecode.com/svn/trunk/html5.js" </ Script> 
+   <[ENDIF]! -> 
+       
     如何区分： DOCTYPE声明\新增的结构元素\功能元素
+    
+    How to distinguish: DOCTYPE declaration \ new structural elements \ functional elements iframe advantages and disadvantages?
 
 iframe的优缺点？
 ------------
@@ -482,6 +720,10 @@ iframe的优缺点？
         解决加载缓慢的第三方内容如图标和广告等的加载问题
         Security sandbox
         并行加载脚本
+        
+        solve slow to load third-party content such as icons and advertisements of loading problems 
+        Security sandbox 
+        parallel load script 
     
     2.`<iframe>`的缺点：
      
@@ -490,12 +732,22 @@ iframe的优缺点？
         
         *即时内容为空，加载也需要时间
         *没有语意 
+        
+        * iframes clog Onload event of the main page; 
+
+        * Instant content is empty, it takes time to load 
+        * no semantics
 
 如何实现浏览器内多个标签页之间的通信?
 -------------------
 
+How to communicate within the browser between multiple tabs?
+-------------------
+
 
     调用localstorge、cookies等本地存储方式
+    
+    Call localstorge, cookies and other local storage
     
 
     
@@ -503,14 +755,26 @@ iframe的优缺点？
 线程与进程的区别
 --------
 
+The difference between threads and processes
+--------
+
     一个程序至少有一个进程,一个进程至少有一个线程. 
     线程的划分尺度小于进程，使得多线程程序的并发性高。 
     另外，进程在执行过程中拥有独立的内存单元，而多个线程共享内存，从而极大地提高了程序的运行效率。 
     线程在执行过程中与进程还是有区别的。每个独立的线程有一个程序运行的入口、顺序执行序列和程序的出口。但是线程不能够独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制。 
     从逻辑角度来看，多线程的意义在于一个应用程序中，有多个执行部分可以同时执行。但操作系统并没有将多个线程看做多个独立的应用，来实现进程的调度和管理以及资源分配。这就是进程和线程的重要区别。
+    
+    A program has at least one process, a process has at least one thread. 
+    divided scale smaller than the thread process, making multi-threaded program concurrency high. 
+    In addition, the process has a separate memory unit in the implementation process, and multiple threads shared memory, thereby       greatly enhancing the operational efficiency of the program. 
+    Threads in the implementation process and the process is still a difference. Each has a separate thread running entry, exit          sequence and procedure execution order. But the thread is not able to perform independent, it must exist according to the            application, providing multiple threads of execution is controlled by the application. 
+    From a logical point of view, the significance of a multi-threaded application, there are a plurality of the operative part can      execute simultaneously. But the operating system is not seen as multiple threads multiple independent applications to achieve        scheduling and management and resource allocation process. This is an important distinction between processes and threads.
 
 
 你如何对网站的文件和资源进行优化？
+-----------------
+
+How do you document and optimize resource site?
 -----------------
 
     期待的解决方案包括：
@@ -519,8 +783,18 @@ iframe的优缺点？
      使用 CDN 托管
      缓存的使用（多个域名来提供缓存）
      其他
+     
+     Expect solutions include: 
+     file merge 
+     file Minimize / file compression 
+     using CDN hosted 
+     cache usage (multiple domain names to provide caching) 
+     Other
 
 请说出三种减少页面加载时间的方法。
+-----------------
+
+Please name three reduce page load time.
 -----------------
 
      1.优化图片 
@@ -531,9 +805,20 @@ iframe的优缺点？
     当浏览器知道了高度和宽度参数后，即使图片暂时无法显示，页面上也会腾出图片的空位，然后继续加载后面的内容。从而加载时间快了，浏览体验也更好了。） 
     
     6.减少http请求（合并文件，合并图片）。
+    
+    1. Optimize image 
+    2. Select the image format (GIF: color offered fewer colors used in some of the less demanding areas) 
+    3. Optimize CSS (compression merge css, such as margin-top, margin-left ... ) 
+    4. slash site (eg www.campr.com/ directory, will determine the "directory what file type or directory.) 
+    5. indicate the height and width (if the browser does not find these two parameters, It needs to calculate the size of one side         while downloading pictures, if the picture a lot, browsers need to constantly adjust the page. This will not only affect the         speed, but also affect browsing experience. 
+       When the browser know the height and width parameters, even if the picture is temporarily unable to display the page will make        pictures of space, and then continue to load the contents back thus loading time faster browsing experience is better.) 
+    6. To reduce http requests (merge files, merge pictures).
 
 
 你都使用哪些工具来测试代码的性能？
+-----------------
+
+Which tools you use to test the performance of the code?
 -----------------
 
     Profiler, JSPerf（http://jsperf.com/nexttick-vs-setzerotimeout-vs-settimeout）, Dromaeo
@@ -542,20 +827,35 @@ iframe的优缺点？
 什么是 FOUC（无样式内容闪烁）？你如何来避免 FOUC？
 ------------------------------
 
+What is FOUC (free style content flicker)? How do you avoid FOUC?
+------------------------------
+
      FOUC - Flash Of Unstyled Content 文档样式闪烁
      <style type="text/css" media="all">@import "../fouc.css";</style> 
     而引用CSS文件的@import就是造成这个问题的罪魁祸首。IE会先加载整个HTML文档的DOM，然后再去导入外部的CSS文件，因此，在页面DOM加载完成到CSS导入完成中间会有一段时间页面上的内容是没有样式的，这段时间的长短跟网速，电脑速度都有关系。
      解决方法简单的出奇，只要在<head>之间加入一个<link>或者<script>元素就可以了。
+     
+     import CSS file and references that is causing the problem the culprit. IE will first load the DOM entire HTML document, and then go to import external CSS files, so the page DOM has finished loading content into CSS import is completed there will be a time in the middle on the page is not the style, the length of this period of time with network speed, computer speed have a relationship.      
+     Workaround surprisingly simple, as long as between the <head> add a <link> or <script> element on it.
 
 null和undefined的区别？
 ------------------
 
+null and undefined difference?
+------------------
+
 `null`是一个表示"无"的对象，转为数值时为0；`undefined`是一个表示"无"的原始值，转为数值时为`NaN`。  
+
+null is a "no," the object representation when converted to a value of 0; undefined is a indicating "no," the original value when converted value NaN .
   
 当声明的变量还未被初始化时，变量的默认值为`undefined`。
 `null`用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象。 
 
+When the variable declaration has not been initialized, the default variable is undefined . null object has not been used to indicate the presence, used to represent the function attempts to return an object that does not exist.
+
 `undefined`表示"缺少值"，就是此处应该有一个值，但是还没有定义。典型用法是：
+
+undefined means "missing value", that is where it should have a value, but not yet defined. Typical usage is:
 
     （1）变量被声明了，但没有赋值时，就等于undefined。
 
@@ -564,39 +864,76 @@ null和undefined的区别？
     （3）对象没有赋值的属性，该属性的值为undefined。
 
     （4）函数没有返回值时，默认返回undefined。
+    
+    (1) variable is declared, but no assignment, it means undefined. 
+
+    (2) When you call the function, the parameters should be provided not provided, this parameter is equal to undefined. 
+
+    (3) The object has no assignment of property, which is undefined. 
+
+    (4) function does not return a value, the default returns undefined.
 
 `null`表示"没有对象"，即该处不应该有值。典型用法是：
+
+null means "no object", ie where there should be no value. Typical usage is:
+
+
 
     （1） 作为函数的参数，表示该函数的参数不是对象。
 
     （2） 作为对象原型链的终点。
+    
+     (1) as a function of the parameters, it indicates that the function of the parameter is not an object. 
+
+     (2) as the end point of the object's prototype chain.
 
 
 
 new操作符具体干了什么呢?
 --------------
 
+What specific new operator did it?
+--------------
+
+
        1、创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。
        2、属性和方法被加入到 this 引用的对象中。
        3、新创建的对象由 this 所引用，并且最后隐式的返回 this 。
+       
+       1. Create an empty object, and this variable refers to the object, but also inherited the prototype of the function. 
+       2, attributes and methods are added to this reference object. 
+       3, the newly created object referenced by this, and the last implicit return this. 
     
     var obj  = {};
     obj.__proto__ = Base.prototype;
     Base.call(obj); 
+    
+    var obj = {}; 
+    obj .__ proto__ = Base.prototype; 
+    Base.call (obj);
 
 
 
 js延迟加载的方式有哪些？
 -------------
 
+js lazy loading options?
+
     defer和async、动态创建DOM方式（创建script，插入到DOM中，加载完毕后callBack）、按需异步载入js
+    
+    defer and async, dynamically created DOM mode (create script, is inserted into the DOM, after loading is completed callBack), asynchronous load demand js
 
 如何解决跨域问题?
+---------
+
+How to solve cross-border issues?
 ---------
 
         jsonp、 document.domain+iframe、window.name、window.postMessage、服务器上设置代理页面
         
     jsonp的原理是动态插入script标签
+    
+        jsonp, document.domain + iframe, window.name, window.postMessage proxy server settings on the page, 
     
     
 具体参见：[详解js跨域问题][2]
