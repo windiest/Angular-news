@@ -710,9 +710,7 @@ support HTML5 new label:
 ###请看readme2.txt
 ###请看readme2.txt
 ###请看readme2.txt
-   <-! [if lt IE 9]> 
-   <Script> src = "http://html5shim.googlecode.com/svn/trunk/html5.js" </ Script> 
-   <[ENDIF]! -> 
+   
        
     如何区分： DOCTYPE声明\新增的结构元素\功能元素
     
