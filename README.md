@@ -18,11 +18,12 @@ Closures have three characteristics:
 1. Function 
 2. The internal function nested function can refer to external parameters and variables 
 3. The parameters and variables will not be garbage collection mechanism Recycling
-You talk about the shortcomings of Cookie
+
  
 请你谈谈Cookie的弊端
 
------------------
+You talk about the shortcomings of Cookie
+
 -----------------
 `cookie`虽然在持久保存客户端数据提供了方便，分担了服务器存储的负担，但还是有很多局限性的。
 第一：每个特定的域名下最多生成20个`cookie`
