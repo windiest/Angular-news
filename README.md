@@ -7,7 +7,6 @@ Using closures designed primarily to private methods and variables. Closure adva
 
 
 
-
 闭包有三个特性:
 
 Closures have three characteristics:
@@ -23,6 +22,7 @@ You talk about the shortcomings of Cookie
  
 请你谈谈Cookie的弊端
 
+-----------------
 -----------------
 `cookie`虽然在持久保存客户端数据提供了方便，分担了服务器存储的负担，但还是有很多局限性的。
 第一：每个特定的域名下最多生成20个`cookie`
