@@ -707,10 +707,6 @@ support HTML5 new label:
 
     * Of course, the best way is the direct use of mature framework, use the most is html5shim framework 
     
-###请看readme2.txt
-###请看readme2.txt
-###请看readme2.txt
-   
        
     如何区分： DOCTYPE声明\新增的结构元素\功能元素
     
