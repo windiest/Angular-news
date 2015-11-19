@@ -7,6 +7,7 @@ Using closures designed primarily to private methods and variables. Closure adva
 
 
 
+
 闭包有三个特性:
 
 Closures have three characteristics:
