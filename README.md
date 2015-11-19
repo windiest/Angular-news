@@ -706,6 +706,8 @@ support HTML5 new label:
   after the browser to support the new label, you also need to add tags default style: 
 
     * Of course, the best way is the direct use of mature framework, use the most is html5shim framework 
+    
+    
    <-! [if lt IE 9]> 
    <Script> src = "http://html5shim.googlecode.com/svn/trunk/html5.js" </ Script> 
    <[ENDIF]! -> 
