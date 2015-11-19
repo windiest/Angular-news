@@ -708,6 +708,8 @@ support HTML5 new label:
     * Of course, the best way is the direct use of mature framework, use the most is html5shim framework 
     
 ###请看readme2.txt
+###请看readme2.txt
+###请看readme2.txt
    <-! [if lt IE 9]> 
    <Script> src = "http://html5shim.googlecode.com/svn/trunk/html5.js" </ Script> 
    <[ENDIF]! -> 
