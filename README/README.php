@@ -1,4 +1,5 @@
 <?php
+
 $content='Talk about your understanding of closures
 
 Using closures designed primarily to private methods and variables. Closure advantage of global variables are avoided contamination, the disadvantage is the closure will be permanent memory, the memory usage increases, improper use is likely to cause a memory leak.
