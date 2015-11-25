@@ -1,4 +1,5 @@
-Talk about your understanding of closures
+<?php
+$content='Talk about your understanding of closures
 
 Using closures designed primarily to private methods and variables. Closure advantage of global variables are avoided contamination, the disadvantage is the closure will be permanent memory, the memory usage increases, improper use is likely to cause a memory leak.
 
@@ -1020,4 +1021,5 @@ How much do you know about Http 2.0?
 
 HTTP / 2 introduced a "server push (serverpush)" concept, which allows the server before the client needs the data to take the initiative to send data to the client cache, thereby improving performance. HTTP / 2 encryption to provide more support for HTTP / 2 using a multiplexing technology that allows multiple messages simultaneously on a cross connection. It adds header compression (header compression), so even very small requests, which request and response header will only occupy a small percentage of bandwidth.
 Status API Training Shop Blog About Pricing
-© 2015 GitHub , Inc. Terms Privacy Security Contact Help
+© 2015 GitHub , Inc. Terms Privacy Security Contact Help';
+?>
