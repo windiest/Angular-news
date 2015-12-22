@@ -1,4 +1,4 @@
->开了交流群喔，可以加入交流心得【Github小伙伴交流群】：http://jq.qq.com/?_wv=1027&k=iRLQRp
+>开了交流群啦，欢迎加入交流心得【Github小伙伴交流群】：http://jq.qq.com/?_wv=1027&k=iRLQRp
 >
 >QQ群365780609
 
