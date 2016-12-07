@@ -1,4 +1,3 @@
-# Good-text-Share
 :smiley_cat:
 
 _These share data are from my usual work and learning，hoping to help you，If you like you can star_
@@ -28,9 +27,6 @@ _These share data are from my usual work and learning，hoping to help you，If 
 |[Angular处理Html转义问题](https://github.com/Wscats/Good-text-Share/issues/5)|[Javascript的setTimeout详细用例](https://github.com/Wscats/Good-text-Share/issues/4)|
 |[妙用Javascript运算符](https://github.com/Wscats/Good-text-Share/issues/3)|[前端冷知识，妙用浏览器地址栏](https://github.com/Wscats/Good-text-Share/issues/2)|
 |[深入理解Javascript函数编程](https://github.com/Wscats/Good-text-Share/issues/1)|
-
-
-# Angular Demo code by Wsscat
 
 _:rabbit: These are about angular learning materials, hoping to help you :snowman: On the common knowledge of angular, DEMO and summary, not regular updates, you can fork and star_
 
