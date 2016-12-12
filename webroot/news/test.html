@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="wscat">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title></title>
+	</head>
+	<script src="dist/js/framework.niubi.js"></script>
+
+	<body ng-controller="indexCtrl">
+		<p>{{name}}</p>
+	</body>
+	<script>
+		var app = angular.module('wscat', []);
+		app.value('apiUrl', 'http://localhost:12345/news/dist/js/test.json');
+		app.controller('indexCtrl', function($scope, $http, apiUrl) {
+			$scope.name = 'w'
+			$http.get(apiUrl, {
+			}).success(function(data) {
+				console.log(data);
+			})
+		})
+	</script>
+
+</html>

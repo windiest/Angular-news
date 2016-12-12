@@ -1,0 +1,67 @@
+{
+  "name": "20",
+  "version": "3.1.8",
+  "description": "A use of angular framework to write the news system, I used the style of weui, production of carousel figure by swiper, using nodejs's native module to make the server, using the gulp to build the project automation, I am wscats, my master is autumnswind,",
+  "main": "http.js",
+  "scripts": {
+    "gulp": "gulp",
+    "test": "gulp && node http",
+    "dev": "node http"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wscats"
+  },
+  "keywords": [
+    "node",
+    "weui",
+    "angular",
+    "swiper",
+    "node-server",
+    "gulp",
+    "autumnswind",
+    "wscats"
+  ],
+  "author": {
+    "name": "wscats"
+  },
+  "license": "ISC",
+  "_id": "20@3.1.6",
+  "_shasum": "ba74f967dced66a2ded61202ff52664435f1ef61",
+  "_from": "20@latest",
+  "_npmVersion": "2.15.1",
+  "_nodeVersion": "4.4.4",
+  "_npmUser": {
+    "name": "autumnswind",
+    "email": "AutumnsWinds@gmail.com"
+  },
+  "dist": {
+    "shasum": "ba74f967dced66a2ded61202ff52664435f1ef61",
+    "tarball": "https://registry.npmjs.org/20/-/20-3.1.6.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "autumnswind",
+      "email": "AutumnsWinds@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/20-3.1.6.tgz_1481208347093_0.9346606880426407"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/20/-/20-3.1.6.tgz",
+  "dependencies": {
+    "gulp": "*",
+    "gulp-uglify": "*",
+    "gulp-rename": "*",
+    "gulp-concat": "*",
+    "gulp-minify-css": "*",
+    "gulp-minify-html": "*",
+    "gulp-imagemin": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/Wscats/news/issues"
+  },
+  "readme": "ERROR: No README data found!"
+}

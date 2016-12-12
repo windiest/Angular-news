@@ -1,0 +1,26 @@
+{
+	"name": "autumnswinds",
+	"version": "1.0.2",
+	"description": "A use of angular framework to write the news system",
+	"main": "gulpfile.js",
+	"scripts": {
+		"test": "gulp"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Wscats"
+	},
+	"dependencies": {
+		"gulp": "*"
+	},
+	"keywords": [
+		"angular",
+		"weui",
+		"swiper"
+	],
+	"bugs": {
+		"url": "https://github.com/Wscats/news/issues"
+	},
+	"author": "wscats",
+	"license": "ISC"
+}

@@ -1,0 +1,95 @@
+<div class="weui-panel weui-panel_access">
+	<div class="weui-panel__hd" ng-click="sortList = true">点击文字此处进行排序
+		<!--旧排序按钮-->
+		<!--<div class="weui-cell__ft">
+			<label for="switchCP" class="weui-switch-cp" style="position: absolute ;display: inline; top: 6px; right: 2px;">
+                    <input id="switchCP" ng-model="switchCp" class="weui-switch-cp__input" type="checkbox" checked="checked">
+                    <div class="weui-switch-cp__box"></div>
+            </label>
+		</div>-->
+	</div>
+	<div class="weui-panel__bd">
+		<a ng-href="#/detail/{{channelId}}/{{$index}}" class="weui-media-box weui-media-box_appmsg" ng-repeat="new in news|filter:searchName|orderBy: new[type] :switchCp">
+
+			<div class="weui-media-box__hd" ng-show="new.havePic">
+				<img class="weui-media-box__thumb" ng-src="{{new.havePic?new.imageurls[0].url:'image/psb.webp.jpg'}}" alt="">
+			</div>
+			<div class="weui-media-box__bd">
+				<h4 class="weui-media-box__title">{{new.title?new.title:'加载中...'}}</h4>
+				<p class="weui-media-box__desc">{{new.desc?new.desc:'加载中'}}</p>
+			</div>
+
+		</a>
+	</div>
+	<div class="weui-panel__ft" ng-show="isShow">
+		<a ng-click="loadMore()" class="weui-cell weui-cell_access weui-cell_link">
+			<div class="weui-cell__bd" style="text-align: center;">查看更多</div>
+			<!--隐藏右箭头-->
+			<!--<span class="weui-cell__ft"></span>-->
+		</a>
+	</div>
+	<div class="weui-loadmore" ng-hide="isShow">
+		<i class="weui-loading"></i>
+		<span class="weui-loadmore__tips">正在加载</span>
+	</div>
+</div>
+<!--loading样式1-->
+<!--<div ng-hide="isShow">
+	<!--<div class="mask"></div>
+	<div class="loading">
+		<img src="image/loading_img_56@2x.png" />
+	</div>
+</div>
+-->
+<!--loading样式2-->
+<loading ng-hide="isShow"></loading>
+
+<!--actionSheet-->
+<div id="actionSheet_wrap">
+	<div class="weui-skin_android" id="weui-android-actionsheet" ng-show="sortList">
+		<div class="weui-mask" ng-click="sortList = false"></div>
+		<div class="weui-actionsheet">
+			<div class="weui-actionsheet__menu">
+				<!--switchCp升序还是降序 type 根据什么类型排列数据 sortList排序列表是否出现 -->
+				<div class="weui-actionsheet__cell" ng-click="switchCp=false;type='pubDate';sortList = false">查看最新新闻</div>
+				<div class="weui-actionsheet__cell" ng-click="switchCp=true;type='pubDate';sortList = false">查看最久新闻</div>
+			</div>
+		</div>
+	</div>
+</div>
+<style>
+	.mask {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 98;
+		height: 100%;
+		width: 100%;
+		background-color: #000000;
+		opacity: 0.2;
+	}
+	
+	.loading {
+		position: fixed;
+		z-index: 99;
+		left: 50%;
+		top: 50%;
+		margin-left: -28px;
+		margin-top: -28px;
+	}
+	
+	.loading img {
+		-webkit-animation: rotateImg 2s infinite;
+		-webkit-animation-timing-function: linear;
+		-webkit-animation-direction: normal;
+	}
+	
+	@-webkit-keyframes rotateImg {
+		from {
+			transform: rotate(0deg)
+		}
+		to {
+			transform: rotate(360deg)
+		}
+	}
+</style>

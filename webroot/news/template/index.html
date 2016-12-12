@@ -1,0 +1,24 @@
+<div class="weui-tab">
+	<div class="weui-navbar weui-fixed">
+		<div class="weui-navbar__item {{id==tab.id?'weui-bar__item_on':''}}" ng-repeat="tab in tabs" ng-click="toggleTab(tab.id,tab.url)">
+			<a class="weui-a">
+				{{tab.name}}
+			</a>
+		</div>
+	</div>
+	<div class="weui-tab__panel">
+
+	</div>
+</div>
+<div ui-view=""></div>
+<style>
+	.weui-fixed {
+		position: fixed;
+	}
+	
+	.weui-a {
+		display: block;
+		width: 100%;
+		/*height: 50px;*/
+	}
+</style>

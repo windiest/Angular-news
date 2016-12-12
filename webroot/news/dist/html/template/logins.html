@@ -1,0 +1,22 @@
+<div class=weui-tab><div class="weui-navbar weui-fixed"><div class="weui-navbar__item weui-bar__item_on"><a class=weui-a>{{page1?'登陆':'注册'}}</a></div></div><div class=weui-tab__panel></div></div><article><section><div ng-click=show(1) ng-class="{'border':page1}">Login</div><div ng-click=show(2) ng-class="{'border':page2}">Register</div></section><div ng-if=page1><div class="weui-cells weui-cells_form" style="margin-top: 2.176471em;"><div class=weui-cell><div class=weui-cell__hd><label class=weui-label>Username:</label></div><div class=weui-cell__bd><input ng-model=username class=weui-input type=text placeholder=请输入用户名></div></div><div class=weui-cell><div class=weui-cell__hd><label class=weui-label>Password:</label></div><div class=weui-cell__bd><input ng-model=password class="weui-input weui-password" type=password placeholder=请输入密码></div></div></div><div class=weui-btn-area><a ng-click=login() class="weui-btn weui-btn_primary" id=showTooltips>登录</a></div></div><div ng-if=page2><div class="weui-cells weui-cells_form" style="margin-top: 2.176471em;"><div class=weui-cell><div class=weui-cell__hd><label class=weui-label>Username:</label></div><div class=weui-cell__bd><input ng-model=username class=weui-input type=text placeholder=请输入用户名></div></div><div class=weui-cell><div class=weui-cell__hd><label class=weui-label>Password:</label></div><div class=weui-cell__bd><input ng-model=password class="weui-input weui-password" type=password placeholder=请输入密码></div></div></div><div class=weui-btn-area><a ng-click=register() class="weui-btn weui-btn_primary" id=showTooltips>注册</a></div></div></article><style>
+	article {
+		background-color: #f8f8f8;
+		position: relative;
+		height: 100%;
+	}
+	
+	section {
+		display: flex;
+	}
+	
+	section div {
+		flex: 1;
+		text-align: center;
+		line-height: 40px;
+		height: 40px;
+	}
+	
+	.border {
+		border-bottom: 2px solid #1AAD19;
+	}
+</style>

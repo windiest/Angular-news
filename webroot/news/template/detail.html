@@ -1,0 +1,119 @@
+<article class="weui-article">
+	<section>
+		<h1 class="title" style="font-weight: 500;">{{new.title}}</h1>
+		<section>
+			<h5>{{'来源：'+new.source}}</h5>
+			<p>
+				{{new.desc}}
+			</p>
+			<p ng-show="new.havePic" style="text-align: center;" ng-repeat="img in new.imageurls">
+				<img ng-click="showGallery(true,img.url)" ng-src="{{img.url}}" alt="">
+				<span class="weui-form-preview__ft">
+					<a class="weui-form-preview__btn weui-form-preview__btn_primary" ng-click="showGallery(true,img.url)">点击查看大图</a>
+				</span>
+			</p>
+		</section>
+	</section>
+</article>
+<div class="weui-gallery" style="display:{{isShowGallery?'block':'none'}}">
+	<span class="weui-gallery__img" style="{{imgUrl}}"></span>
+	<div class="weui-gallery__opr">
+		<a ng-click="showGallery(false)" class="weui-gallery__del">
+			退出
+			<!--垃圾桶图标-->
+			<!--<i class="weui-icon-delete weui-icon_gallery-delete"></i>-->
+		</a>
+	</div>
+</div>
+
+<div class="weui-panel weui-panel_access">
+	<div class="weui-panel__hd">其他感兴趣</div>
+	<div class="weui-panel__bd">
+		<a ng-href="{{new.link}}" class="weui-media-box weui-media-box_appmsg">
+			<div class="weui-media-box__hd">
+				<img class="weui-media-box__thumb" ng-src="{{new.havePic?new.imageurls[0].url:'image/windiest.jpg'}}" alt="loading">
+			</div>
+			<div class="weui-media-box__bd">
+				<h4 class="weui-media-box__title">{{new.title}}</h4>
+				<p class="weui-media-box__desc">{{new.desc}}</p>
+			</div>
+		</a>
+	</div>
+	<div class="weui-panel__ft">
+		<a href="{{new.link}}" class="weui-cell weui-cell_access weui-cell_link">
+			<div class="weui-cell__bd">原文链接</div>
+			<span class="weui-cell__ft"></span>
+		</a>
+	</div>
+</div>
+<div class="weui-panel weui-panel_access">
+	<div class="weui-panel__hd">相关新闻</div>
+	<div class="weui-panel__bd">
+		<div class="weui-media-box weui-media-box_text">
+			<h4 class="weui-media-box__title">{{new.title}}</h4>
+			<p class="weui-media-box__desc">{{new.desc}}</p>
+		</div>
+	</div>
+	<div class="weui-panel__ft">
+		<a href="{{new.link}}" class="weui-cell weui-cell_access weui-cell_link">
+			<div class="weui-cell__bd">原文链接</div>
+			<span class="weui-cell__ft"></span>
+		</a>
+	</div>
+</div>
+<div class="weui-panel">
+	<div class="weui-panel__hd">Link</div>
+	<div class="weui-panel__bd">
+		<div class="weui-media-box weui-media-box_small-appmsg">
+			<div class="weui-cells">
+				<a class="weui-cell weui-cell_access" href="{{new.link}}">
+					<div class="weui-cell__hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:20px;margin-right:5px;display:block"></div>
+					<div class="weui-cell__bd weui-cell_primary">
+						<p>原文链接</p>
+					</div>
+					<span class="weui-cell__ft"></span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="weui-panel">
+	<div class="weui-panel__hd">评论</div>
+	<div class="weui-panel__bd">
+		<div class="weui-media-box weui-media-box_text">
+			<h4 class="weui-media-box__title">{{new.title}}</h4>
+			<p class="weui-media-box__desc">{{new.desc}}</p>
+			<ul class="weui-media-box__info">
+				<li class="weui-media-box__info__meta">{{new.source}}</li>
+				<li class="weui-media-box__info__meta">{{new.pubDate}}</li>
+				<li class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{new.channelName}}</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="weui-form-preview">
+	<div class="weui-form-preview__hd">
+		<label class="weui-form-preview__label">频道</label>
+		<em class="weui-form-preview__value" style="font-size: 1.1em">{{new.channelName}}</em>
+	</div>
+	<div class="weui-form-preview__bd">
+		<p>
+			<label class="weui-form-preview__label">发布时间</label>
+			<span class="weui-form-preview__value">{{new.pubDate}}</span>
+		</p>
+		<p>
+			<label class="weui-form-preview__label">来源</label>
+			<span class="weui-form-preview__value">{{new.source}}</span>
+		</p>
+		<p>
+			<label class="weui-form-preview__label">文章</label>
+			<span class="weui-form-preview__value">{{new.desc}}</span>
+		</p>
+	</div>	
+	<div class="weui-form-preview__ft">
+		<a class="weui-form-preview__btn weui-form-preview__btn_primary" ng-href="#/detail/{{channelId}}/{{id!=allNum-1?id+1:allNum-1}}">{{id!=allNum-1?'下一页':'最后一页'}}</a>
+	</div>
+</div>
+
+<!--loading-->
+<loading ng-hide="isShow"></loading>

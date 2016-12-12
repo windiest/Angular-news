@@ -1,0 +1,25 @@
+<div class=swiper-container><div class=swiper-wrapper><div class=swiper-slide><a href=https://github.com/windiest><img style="width: 100%;" src=image/psb.webp.jpg></a></div><div class=swiper-slide><a ng-href=#/detail/{{channelId}}/{{swiperImg[0].id?swiperImg[0].id:0}}><img style="width: 100%;" ng-src="{{swiperImg[0].imageurls[0].url?swiperImg[0].imageurls[0].url:'image/psb.webp.jpg'}}"></a></div><div class=swiper-slide><a ng-href=#/detail/{{channelId}}/{{swiperImg[1].id?swiperImg[1].id:0}}><img style="width: 100%;" ng-src="{{swiperImg[1].imageurls[0].url?swiperImg[1].imageurls[0].url:'image/psb.webp.jpg'}}"></a></div><div class=swiper-slide><a ng-href=#/detail/{{channelId}}/{{swiperImg[2].id?swiperImg[2].id:0}}><img style="width: 100%;" ng-src="{{swiperImg[2].imageurls[0].url?swiperImg[2].imageurls[0].url:'image/psb.webp.jpg'}}"></a></div></div><div class=swiper-pagination></div></div><style>
+	.swiper-container {
+		width: 100%;
+		height: 200px;
+	}
+	
+	.swiper-slide {
+		text-align: center;
+		font-size: 18px;
+		background: #fff;
+		/* Center slide text vertically */
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		-webkit-justify-content: center;
+		justify-content: center;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		-webkit-align-items: center;
+		align-items: center;
+	}
+</style>
