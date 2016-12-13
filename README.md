@@ -5,7 +5,7 @@
 
 <p>
   <strong>Use Weui and Angular prepared by the news client</strong>,
-  <a href="https://wscats.github.io/news/news/indexTest.html#/index/list">Live Demo</a>
+  <a href="https://wscats.github.io/Angular-news/news/indexTest.html#/index/list">Live Demo</a>
 </p>
 
 <p>
