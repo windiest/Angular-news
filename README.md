@@ -14,14 +14,6 @@
     <a href="https://github.com/Wscats">Wscats</a>
   </sub>
 </p>
-
-<p>
-<a href="https://github.com/Wscats/news"><img src="https://wscats.github.io/Wscats/news/blob/master/webroot/news/image/npm.svg" alt="NPM version"></a>
-<a href="https://github.com/Wscats/news"><img src="https://wscats.github.io/news/news/image/mit.svg" alt="MIT License"></a>
-<a href="https://github.com/Wscats/news"><img src="https://wscats.github.io/news/news/image/linux.svg" alt="Linux Build"></a>
-<a href="https://github.com/Wscats/news"><img src="https://wscats.github.io/news/news/image/windows.svg" alt="Window Build"/></a>
-</p>
-
 </div>
 
 
