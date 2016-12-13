@@ -9,6 +9,13 @@
 </p>
 
 <p>
+  <a href="https://github.com/Wscats/news"><img src="https://wscats.github.io/Angular-news/news/image/npm.svg" alt="NPM version"></a>
+  <a href="https://github.com/Wscats/news"><img src="https://wscats.github.io/Angular-news/news/image/mit.svg" alt="MIT License"></a>
+  <a href="https://github.com/Wscats/news"><img src="https://wscats.github.io/Angular-news/news/image/linux.svg" alt="Linux Build"></a>
+  <a href="https://github.com/Wscats/news"><img src="https://wscats.github.io/Angular-news/news/image/windows.svg" alt="Window Build"/></a>
+</p>
+
+<p>
   <sub>Made with ❤︎ by
     <a href="https://github.com/windiest">Winds</a> and
     <a href="https://github.com/Wscats">Wscats</a>
