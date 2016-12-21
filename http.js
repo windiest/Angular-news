@@ -6,7 +6,7 @@
 var http = require('http');
 //读取文件的模块
 var fs = require('fs');
-//处理url的模块
+//处理url的模块 比如处理路由
 var url = require('url');
 //解析url的信息
 var path = require('path');
