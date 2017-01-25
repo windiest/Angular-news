@@ -73,3 +73,9 @@ http://localhost:12345/news/index.html
 
 [MIT](http://opensource.org/licenses/MIT)
 Copyright (c) 2016 [Winds](https://github.com/windiest)❤︎[Wscats](https://github.com/Wscats)
+
+## Other
+
+[如何评价 GitHub 中国区粉丝数前 100 名的用户？](https://www.zhihu.com/question/42256682)
+
+[为什么有人GitHub排行很低，不仅不向排行高的学习，反而去黑排行高的？](https://www.zhihu.com/question/42689999)
